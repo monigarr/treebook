@@ -14,10 +14,11 @@
 .status.hover {
 	background: #FAFAFA;
 }
+
 .status .admin {
 	display: none;
 }
 
-.status .hover .admin {
+.status.hover .admin {
 	display: inline;
 }

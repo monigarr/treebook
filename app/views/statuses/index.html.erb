@@ -9,7 +9,8 @@
   
   <div class="status">
     
-    <p>
+    <strong><%= status.user.try(:first_name) %></strong>
+      <p>
       <%= status.content %>
     </p>
 
