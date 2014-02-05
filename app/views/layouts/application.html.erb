@@ -8,7 +8,21 @@
 </head>
 <body>
 
+<div class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+			<a href="#" class="navbar-brand">Treebook</a>
+			<ul class="nav">
+				<li><%= link_to "All Statuses", statuses_path %></li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<div class="container">
 <%= yield %>
+</div>
 
 </body>
 </html>
