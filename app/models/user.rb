@@ -11,12 +11,17 @@ class User < ActiveRecord::Base
 
   validates :first_name, presence: true
   validates :last_name, presence: true
-  validates :profile_name, presence: true, uniqueness: true
+  validates :profile_name, presence: true, 
+            uniqueness: true,
+          format: {
+            with: /a-zA-Z0-9_-/, 
+            message: 'Must be formatted correctly'
+          }
 
   has_many :statuses
 
   def full_name
-    self.full_name = self.first_name + " " + self.last_name
+    first_name + " " + last_name
   end
 
 end
