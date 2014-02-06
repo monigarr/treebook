@@ -4,5 +4,5 @@
 
 $ ->
 	$('.status').hover (event) ->
-		$(this).toggleClass('hover')
+		$(this).toggleClass("hover")
 		
