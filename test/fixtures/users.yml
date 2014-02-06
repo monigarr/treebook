@@ -1,9 +1,5 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
 jason:
-first_name: "Jason"
-last_name: "Seifer"
-email: "jason@teamtreehouse.com"
-profile_name: "jasonseifer"
-password: "password"
-password_confirmation: "password"
+  first_name: "Jason"
+  last_name: "Seifer"
+  email: "jason@teamtreehouse.com"
+  profile_name: "jasonseifer"
