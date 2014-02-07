@@ -8,20 +8,35 @@ class StatusesController < ApplicationController
   # GET /statuses.json
   def index
     @statuses = Status.all
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @statuses }
+    end
   end
 
   # GET /statuses/1
   # GET /statuses/1.json
   def show
+    @status = Status.find(params[:id])
+
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @status }
+    end
   end
 
   # GET /statuses/new
   def new
     @status = Status.new
+    respond_to do |format|
+      format.html # new.html.erb
+      format.json { render json: @status }
+    end
   end
 
   # GET /statuses/1/edit
   def edit
+    @status = Status.find(params[:id])
   end
 
   # POST /statuses
@@ -57,6 +72,7 @@ class StatusesController < ApplicationController
   # DELETE /statuses/1
   # DELETE /statuses/1.json
   def destroy
+    @status = Status.find(params[:id])
     @status.destroy
     respond_to do |format|
       format.html { redirect_to statuses_url }
@@ -72,6 +88,6 @@ class StatusesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def status_params
-      params.require(:status).permit(:name, :content)
+      params.require(:status).permit(:user_id, :content)
     end
 end

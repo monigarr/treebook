@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me,
-                  :first_name, :last_name, :profile_name, :full_name
+                  :first_name, :last_name, :profile_name
   # attr_accessible :title, :body
 
   validates :first_name, presence: true
@@ -20,7 +20,7 @@ class User < ActiveRecord::Base
   has_many :statuses
 
   def full_name
-    first_name + " " + last_name
+    profile_name
   end
 
   def gravatar_url
